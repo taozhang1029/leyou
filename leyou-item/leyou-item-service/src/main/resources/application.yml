@@ -1,0 +1,19 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: leyou-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///leyou?useSSL=false
+    username: root
+    password: taozhang1029
+eureka:
+  client:
+    service-url:
+      defaultZone: http://www.kingsley.leyou.com:10010/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 15
+mybatis:
+  type-aliases-package: com.kingsley.leyou.item.domain
