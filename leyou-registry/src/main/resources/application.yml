@@ -1,0 +1,13 @@
+server:
+  port: 10000
+spring:
+  application:
+    name: leyou-registry
+eureka:
+  client:
+    service-url:
+      defaultZone: http://www.kingsley.leyou.com:${server.port}/eureka
+    # 不注册自己
+    register-with-eureka: false
+    # 注册中心不需要拉取服务，消费者才需要
+    fetch-registry: false
