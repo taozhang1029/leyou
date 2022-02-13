@@ -3,20 +3,20 @@ package com.kingsley.leyou;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import tk.mybatis.spring.annotation.MapperScan;
 
 /**
  * @author kingsley
- * @time 2022/2/11 15:20
+ * @time 2022/2/12 22:15
  * @ide IntelliJ IDEA
- * @name com.kingsley.leyou.ServiceStarter
- * @desc 乐优商城微服务启动类
+ * @name com.kingsley.leyou.UploadStarter
+ * @desc 乐优商城文件上传启动器
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@MapperScan("com.kingsley.leyou.item.mapper")
-public class ServiceStarter {
+public class UploadStarter {
+    
     public static void main(String[] args) {
-        SpringApplication.run(ServiceStarter.class, args);
+        SpringApplication.run(UploadStarter.class, args);
     }
+    
 }

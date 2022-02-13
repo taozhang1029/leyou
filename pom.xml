@@ -8,6 +8,7 @@
         <module>leyou-gateway</module>
         <module>leyou-item</module>
         <module>leyou-utils</module>
+        <module>leyou-upload</module>
     </modules>
 
     <parent>
