@@ -2,15 +2,14 @@ package com.kingsley.leyou.item.controller;
 
 import com.kingsley.leyou.common.domain.PageResult;
 import com.kingsley.leyou.item.domain.Brand;
+import com.kingsley.leyou.item.domain.Category;
 import com.kingsley.leyou.item.service.BrandService;
+import com.kingsley.leyou.item.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,6 +26,9 @@ public class BrandController {
     
     @Autowired
     private BrandService brandService;
+    
+    @Autowired
+    private CategoryService categoryService;
     
     /**
      * 分页查询品牌
@@ -54,6 +56,12 @@ public class BrandController {
     public ResponseEntity<Void> saveBrand(Brand brand, @RequestParam("cids") List<Long> cids) {
         brandService.saveBrand(brand, cids);
         return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+    
+    @GetMapping("/cid/{cid}")
+    public ResponseEntity<List<Brand>> queryCategoriesByCid(@PathVariable("cid") Long cid){
+        List<Brand> categories = categoryService.queryCategoriesByCid(cid);
+        return ResponseEntity.ok(categories);
     }
     
 }
